@@ -4,6 +4,7 @@ import Select from './components/Select';
 import Weather from './components/Weather';
 const API_key = '164f7e0927ab26322a04a869e9af2a91';
 
+
 class App extends React.Component{
     constructor(){
         super();
@@ -57,19 +58,32 @@ render(){
 
     return (
         <div>
+        <div className="wrapper">
+        <div className="main">
+        <div className="container">
+        <div className="row">
+        <div className="col-xs-5 title-container">
             <Header/>
+        </div>
+        <div className="col-xs-7 form-container">
             <Select getWeather={this.getWeather}/> {/*we can now use this function in Select Component*/}
             <Weather
-                temperature={this.state.temperature}
-                city={this.state.city}
-                country={this.state.country}
-                humidity={this.state.humidity}
-                description={this.state.description}
-                error={this.state.error}
+                    temperature={this.state.temperature}
+                    city={this.state.city}
+                    country={this.state.country}
+                    humidity={this.state.humidity}
+                    description={this.state.description}
+                    error={this.state.error}
             />
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
         </div>
     )
 }
 
 }
+
 export default App;

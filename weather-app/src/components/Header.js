@@ -5,9 +5,9 @@ class Header extends React.Component{
 
     render(){
 
-        return ( <div>
-                <h1>Weather Forecast</h1>
-                <span>Check what the weather is like in a selected corner of the world!</span>
+        return ( <div className='titles'>
+                <h1 className='title-container__title'>Weather Forecast</h1>
+                <span className='title-container__subtitle'>Check what the weather is like in a selected corner of the world!</span>
             </div>
         );
     }
