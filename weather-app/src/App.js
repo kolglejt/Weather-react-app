@@ -24,20 +24,34 @@ class App extends React.Component{
         const country = e.target.elements.country.value;
         const api_call = await fetch (`http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}id=&appid=${API_key}`);
         const data = await api_call.json();
-        console.log(data);
+
+        if(city && country){
+
+        {/*console.log(data);
         console.log(data.city.name);
         console.log(data.city.country);
         console.log(data.list[0].main.temp);
         console.log(data.list[0].main.humidity);
-        console.log(data.list[0].weather[0].description);
-        this.setState({
-            temperature: data.list[0].main.temp,
-            city: data.city.name,
-            country: data.city.country,
-            humidity: data.list[0].main.humidity,
-            description: data.list[0].weather[0].description,
-            error: ''
-        });
+        console.log(data.list[0].weather[0].description);*/}
+
+            this.setState({
+                temperature: data.list[0].main.temp,
+                city: data.city.name,
+                country: data.city.country,
+                humidity: data.list[0].main.humidity,
+                description: data.list[0].weather[0].description,
+                error: ''
+            });
+        } else {
+            this.setState({
+                temperature: undefined,
+                city: undefined,
+                country: undefined,
+                humidity: undefined,
+                description: undefined,
+                error: 'Please enter the values'
+            });
+        }
     };
 render(){
 
